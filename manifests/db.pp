@@ -151,7 +151,7 @@ define oslo::db(
       }
     }
 
-    if $backend_package and !defined(Package[$backend_package]) {
+    if $backend_package and !defined(Package['db_backend_package']) {
       package { 'db_backend_package':
         ensure => present,
         name   => $backend_package,
